@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: #1E1B17;
+    color: #F5F0E8;
+    font-weight: 400;
+  }
+  h1, h2, h3, h4 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+}
+
+@layer utilities {
+  .font-serif {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .link-underline {
+    position: relative;
+  }
+  .link-underline::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 1px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+  .link-underline:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #4A453E;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #6B6358;
+}
+
+
+.gm-style-iw-c {
+  background: #2C2823 !important;
+  padding: 0 !important;
+  border: 1px solid rgba(245, 240, 232, 0.12) !important;
+  border-radius: 2px !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5) !important;
+}
+.gm-style-iw-d {
+  background: transparent !important;
+  padding: 0 !important;
+}
+.gm-style-iw button {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+.gm-style-iw button[aria-label="Close"] {
+  color: #A89F92 !important;
+  font-size: 16px !important;
+  line-height: 1 !important;
+}
+.gm-style-iw button[aria-label="Close"]:hover {
+  color: #F5F0E8 !important;
+}
+
+.aegis-info {
+  padding: 12px 34px 12px 14px;
+  min-width: 180px;
+  max-width: 250px;
+}
+.aegis-info-kicker {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.aegis-info-title {
+  margin-top: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: #F5F0E8;
+}
+.aegis-info-meta {
+  margin-top: 4px;
+  font-size: 11px;
+  line-height: 1.5;
+  color: #A89F92;
+}
+.aegis-info-note {
+  margin-top: 6px;
+  font-size: 11px;
+  color: #C9A87C;
+}
